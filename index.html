@@ -29,7 +29,18 @@
             display: flex; flex-direction: column; align-items: center; justify-content: center; 
             height: 100%; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('sunset.png.PNG');
             background-size: 64px;
-        }
+        /* 1. Use your image */
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('sunset.png');
+    
+    /* 2. STOP the repeating/tiling */
+    background-repeat: no-repeat;
+    
+    /* 3. STRETCH it to fit the whole screen */
+    background-size: cover;
+    
+    /* 4. KEEP it centered */
+    background-position: center;
+}
 </head>
 <body>
 
