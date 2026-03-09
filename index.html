@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Eagler Mobile Launcher</title>
+<link rel="manifest" href="manifest.json">
+    <style>
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; background: #1e1e1e; font-family: 'Segoe UI', sans-serif; color: white; overflow: hidden; }
+        #menu { 
+            display: flex; flex-direction: column; align-items: center; justify-content: center; 
+            height: 100%; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://minecraft.net/static/theme/img/background/dirt.jpg');
+            background-size: 64px;
+        }
+        h1 { font-size: 2.5rem; text-shadow: 3px 3px 0px #000; margin-bottom: 30px; }
+        .btn-group { display: flex; flex-direction: column; gap: 15px; width: 85%; max-width: 350px; }
+        .mc-btn {
+            background: #555; border: 3px solid #000; padding: 15px; 
+            color: white; font-size: 1.2rem; cursor: pointer; text-align: center;
+            box-shadow: inset 2px 2px 0px #888, inset -2px -2px 0px #333;
+        }
+        .mc-btn:active { transform: scale(0.98); background: #444; }
+        
+        #game-view { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 100; }
+        iframe { width: 100%; height: 100%; border: none; }
+        .back-btn {
+            position: absolute; top: 10px; left: 10px; z-index: 101;
+            background: rgba(0,0,0,0.6); color: white; border: 1px solid white;
+            padding: 8px 12px; border-radius: 4px; font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="menu">
+        <h1>Eaglercraft Mobile</h1>
+        <div class="btn-group">
+            <button class="mc-btn" onclick="launch('Eaglercraft-b1.7.3.html')">Beta 1.7.3</button>
+            <button class="mc-btn" onclick="launch('Eaglercraft-1.2.5.html')">Release 1.2.5</button>
+            <button class="mc-btn" onclick="launch('Eaglercraft-Infdev.html')">Infdev</button>
+        </div>
+    </div>
+
+    <div id="game-view">
+        <button class="back-btn" onclick="quit()">Quit</button>
+        <iframe id="game-frame"></iframe>
+    </div>
+
+    <script>
+        function launch(file) {
+            document.getElementById('menu').style.display = 'none';
+            document.getElementById('game-view').style.display = 'block';
+            document.getElementById('game-frame').src = file;
+        }
+        function quit() {
+            document.getElementById('game-view').style.display = 'none';
+            document.getElementById('menu').style.display = 'flex';
+            document.getElementById('game-frame').src = '';
+        }
+    </script>
+</body>
+</html>

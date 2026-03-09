@@ -1,0 +1,22 @@
+{
+  "short_name": "Al3X's Eagler launcher",
+  "name": "Al3X's Eaglercraft Offline Launcher",
+  "description": "Offline Eaglercraft launcher with mobile touch controls.",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "index.html",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#1e1e1e",
+  "theme_color": "#1e1e1e"
+}
